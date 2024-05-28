@@ -5,14 +5,17 @@ import { useNavigate } from "react-router-dom";
 import KorMap from '../contents/Map&graph/KorMap';
 import PopulationTable from '../contents/Map&graph/PopulationTable';
 import styled from "styled-components";
+import Button from '../UI/Button';
+import Header from '../UI/Header';
+
 const Wrapper = styled.div`
     padding: 16px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
-    height: 100%; /* 높이를 조정하여 지도와 그래프를 적절히 표시합니다. */
+    height: 100%;
 `;
 
 const Container = styled.div`
@@ -22,25 +25,15 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     height: 600px;
+    padding-bottom: 20px;
 `;
 
 const Content = styled.div`
     width: 48%;
-    height: 100%; 
-`;
-
-const Button = styled.button`
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    &:hover {
-        background-color: #45a049;
-    }
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 `;
 
 function MainPage() {
@@ -63,13 +56,16 @@ function MainPage() {
     return (
         <Wrapper>
             <Button
+                title="구인정보"
                 onClick={() => {
                     navigate('/FetchJob');
-                }}>정보</Button>
+                }}/>
             <Button
+                title="장애인고용공단정보"
                 onClick={() => {
                     navigate('/Information');
-                }}>구인구직</Button>
+                }}/>
+            <Header title='장애인 인구 현황'/>
             <Container>
                 <Content>
                     <KorMap data={data} />
@@ -78,6 +74,7 @@ function MainPage() {
                     <PopulationTable data={data} />
                 </Content>
             </Container>
+            <Header title='그래프'/>
             <FluctuationChart data={data} />
         </Wrapper>
     );

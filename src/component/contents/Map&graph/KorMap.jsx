@@ -1,5 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 import { SimpleSouthKoreaMapChart } from "react-simple-south-korea-map-chart";
+
+
+const Container = styled.div`
+  margin-top: 20px;
+`;
 
 // 커스텀 툴팁 컴포넌트 정의
 const CustomTooltip = ({ darkMode, tooltipStyle, children }) => {
@@ -64,11 +70,14 @@ function KorMap({ data }) {
   };
 
   return (
+    <Container>
+    <h2>인구지도</h2>
     <SimpleSouthKoreaMapChart
       setColorByCount={setColorByCount}
       data={chartData}
       customTooltip={<CustomTooltip />} // 커스텀 툴팁 적용
     />
+    </Container>
   );
 }
 

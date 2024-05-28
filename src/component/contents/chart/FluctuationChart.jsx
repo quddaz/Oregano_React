@@ -11,6 +11,7 @@ import {
   Bar,
 } from 'recharts';
 
+//지역 이름 표준화
 const abbreviateRegion = (regionName) => {
   const abbreviationMap = {
     "서울특별시": "서울",
@@ -34,13 +35,11 @@ const abbreviateRegion = (regionName) => {
 
   return abbreviationMap[regionName] || regionName;
 };
-
-// Extend Y-axis range to accommodate values up to 1,000,000
+// 숫자 값을 1,000,000 형식으로 변환
 const tickFormatY = (tickItem) => {
    return tickItem >= 1000 ? tickItem.toLocaleString() : tickItem;
 };
 
-// Tooltip formatting function
 const tooltipFormat = (value) => {
   return  value >= 1000 ? value.toLocaleString() : value;
 };

@@ -59,31 +59,43 @@ function KakaoMap() {
     if (branch) {
       const infoPanel = document.getElementById('infoPanel');
       infoPanel.innerHTML = `
-        <h2>${branch.name}</h2>
-        <p>Address: ${branch.address}</p>
-        <p>Tel: ${branch.tel}</p>
-        <p>Fax: ${branch.fax}</p>
-        <p>Beat: ${branch.beat}</p>
+        <div id="panel-container">
+          <p class="location">Location</p>
+          <h2>${branch.name}</h2>
+        </div>
+        <div class="details">
+          <p>주소: ${branch.address}</p>
+          <p>전화: ${branch.tel}</p>
+          <p>팩스: ${branch.fax}</p>
+          <p>관할구역: ${branch.beat}</p>
+        </div>
       `;
     }
   };
 
   return (
     <div className="container">
-      <select className="branch-select" value={selectedBranch} onChange={handleBranchChange}>
-        {branches.map(branch => (
-          <option key={branch.name} value={branch.name}>{branch.name}</option>
-        ))}
-      </select>
+      <div className="header-container">
+        <div className="location-heading">오시는 길</div>
+        <select className="branch-select" value={selectedBranch} onChange={handleBranchChange}>
+          {branches.map(branch => (
+            <option key={branch.name} value={branch.name}>{branch.name}</option>
+          ))}
+        </select>
+      </div>
       <div className="sub_container">
         <div id="map" className="map-container"></div>
         <div id="infoPanel" className="info-panel">
-          <h2>{branches[0].name}</h2>
-          <hr/>
-          <p>주소: {branches[0].address}</p>
-          <p>전화: {branches[0].tel}</p>
-          <p>팩스: {branches[0].fax}</p>
-          <p>관할구역: {branches[0].beat}</p>
+          <div id="panel-container">
+            <p className="location">Location</p>
+            <h2>{branches[0].name}</h2>    
+          </div>
+          <div className="details">
+            <p>주소: {branches[0].address}</p>
+            <p>전화: {branches[0].tel}</p>
+            <p>팩스: {branches[0].fax}</p>
+            <p>관할구역: {branches[0].beat}</p>
+          </div>
         </div>
       </div>
     </div>
