@@ -71,7 +71,6 @@ function KorMap({ data }) {
 
   return (
     <Container>
-    <h2>인구지도</h2>
     <SimpleSouthKoreaMapChart
       setColorByCount={setColorByCount}
       data={chartData}

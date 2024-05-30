@@ -7,11 +7,6 @@ function Information(){
     const navigate = useNavigate();
     return (
         <div>
-            <Button
-                title="메인"
-                onClick={() => {
-                navigate('/');
-            }} />
             <KakaoMap/>
         </div>
     );

@@ -8,16 +8,12 @@ import styled from "styled-components";
 import FetchJob from './component/page/FetchJob';
 import Information from './component/page/Information';
 import MainPage from "./component/page/MainPage";
-const MainTitleText = styled.p`
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-`;
+import TopMenu from "./component/UI/TopMenu";
 
 function App() {
     return (
         <BrowserRouter>
-            <MainTitleText>오레가노</MainTitleText>
+            <TopMenu/>
             <Routes>
                 <Route index element={<MainPage />} />
                 <Route path="FetchJob" element={<FetchJob />} />

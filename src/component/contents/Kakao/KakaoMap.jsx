@@ -60,10 +60,10 @@ function KakaoMap() {
       const infoPanel = document.getElementById('infoPanel');
       infoPanel.innerHTML = `
         <div id="panel-container">
-          <p class="location">Location</p>
+          <p class="kakao-map-location">Location</p>
           <h2>${branch.name}</h2>
         </div>
-        <div class="details">
+        <div class="kakao-map-details">
           <p>주소: ${branch.address}</p>
           <p>전화: ${branch.tel}</p>
           <p>팩스: ${branch.fax}</p>
@@ -74,23 +74,23 @@ function KakaoMap() {
   };
 
   return (
-    <div className="container">
-      <div className="header-container">
-        <div className="location-heading">오시는 길</div>
-        <select className="branch-select" value={selectedBranch} onChange={handleBranchChange}>
+    <div className="kakao-map-container">
+      <div className="kakao-map-header">
+        <div className="kakao-map-location-heading">오시는 길</div>
+        <select className="kakao-map-branch-select" value={selectedBranch} onChange={handleBranchChange}>
           {branches.map(branch => (
             <option key={branch.name} value={branch.name}>{branch.name}</option>
           ))}
         </select>
       </div>
-      <div className="sub_container">
-        <div id="map" className="map-container"></div>
-        <div id="infoPanel" className="info-panel">
+      <div className="kakao-map-sub-container">
+        <div id="map" className="kakao-map-map-container"></div>
+        <div id="infoPanel" className="kakao-map-info-panel">
           <div id="panel-container">
-            <p className="location">Location</p>
+            <p className="kakao-map-location">Location</p>
             <h2>{branches[0].name}</h2>    
           </div>
-          <div className="details">
+          <div className="kakao-map-details">
             <p>주소: {branches[0].address}</p>
             <p>전화: {branches[0].tel}</p>
             <p>팩스: {branches[0].fax}</p>

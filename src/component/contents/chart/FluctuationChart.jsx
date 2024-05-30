@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   ResponsiveContainer,
@@ -11,7 +11,7 @@ import {
   Bar,
 } from 'recharts';
 
-//지역 이름 표준화
+// 지역 이름 표준화
 const abbreviateRegion = (regionName) => {
   const abbreviationMap = {
     "서울특별시": "서울",
@@ -35,13 +35,14 @@ const abbreviateRegion = (regionName) => {
 
   return abbreviationMap[regionName] || regionName;
 };
+
 // 숫자 값을 1,000,000 형식으로 변환
 const tickFormatY = (tickItem) => {
-   return tickItem >= 1000 ? tickItem.toLocaleString() : tickItem;
+  return tickItem >= 1000 ? tickItem.toLocaleString() : tickItem;
 };
 
 const tooltipFormat = (value) => {
-  return  value >= 1000 ? value.toLocaleString() : value;
+  return value >= 1000 ? value.toLocaleString() : value;
 };
 
 const FluctuationChart = ({ data }) => {
@@ -74,10 +75,13 @@ const FluctuationChart = ({ data }) => {
             interval={0}
             tickLine={false}
             axisLine={false}
-            domain={[0, 700000]} // Set maximum value of Y-axis to 1,000,000
+            domain={[0, 700000]}
             tickFormatter={tickFormatY}
           />
-          <Tooltip formatter={(value) => tooltipFormat(value)} />
+          <Tooltip
+            labelFormatter={(value) => abbreviateRegion(value)} // Use abbreviations for tooltip labels
+            formatter={(value) => tooltipFormat(value)}
+          />
           <Legend />
           <Bar yAxisId="left" dataKey="DT" name="장애인 인구 수" barSize={20} fill="#8884d8" />
         </ComposedChart>

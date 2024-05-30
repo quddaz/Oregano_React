@@ -6,11 +6,6 @@ function FetchJob(){
     const navigate = useNavigate();
     return (
         <div>
-            <Button
-                title="메인"
-                onClick={() => {
-                navigate('/');
-            }} />
             <Job/>
         </div>
     );

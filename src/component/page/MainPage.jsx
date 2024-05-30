@@ -4,37 +4,8 @@ import FluctuationChart from '../contents/chart/FluctuationChart';
 import { useNavigate } from "react-router-dom";
 import KorMap from '../contents/Map&graph/KorMap';
 import PopulationTable from '../contents/Map&graph/PopulationTable';
-import styled from "styled-components";
-import Button from '../UI/Button';
 import Header from '../UI/Header';
-
-const Wrapper = styled.div`
-    padding: 16px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    height: 100%;
-`;
-
-const Container = styled.div`
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 600px;
-    padding-bottom: 20px;
-`;
-
-const Content = styled.div`
-    width: 48%;
-    height: 100%;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-`;
+import './css/MainPage.css'; // CSS 파일 import
 
 function MainPage() {
     const navigate = useNavigate();
@@ -54,29 +25,21 @@ function MainPage() {
     };
 
     return (
-        <Wrapper>
-            <Button
-                title="구인정보"
-                onClick={() => {
-                    navigate('/FetchJob');
-                }}/>
-            <Button
-                title="장애인고용공단정보"
-                onClick={() => {
-                    navigate('/Information');
-                }}/>
+        <div className="wrapper">
             <Header title='장애인 인구 현황'/>
-            <Container>
-                <Content>
+            <div className="container">
+                <div className="content">
                     <KorMap data={data} />
-                </Content>
-                <Content>
+                </div>
+                <div className="content"> 
                     <PopulationTable data={data} />
-                </Content>
-            </Container>
+                </div>
+            </div>
             <Header title='그래프'/>
+            <div className='Big-content'>
             <FluctuationChart data={data} />
-        </Wrapper>
+            </div>
+        </div>
     );
 }
 
