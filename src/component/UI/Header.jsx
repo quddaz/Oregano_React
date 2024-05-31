@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-const StyleHeader = styled.h2`
+const StyledHeader = styled.h2`
   text-align: left;
   font-size: 24px;
   margin-bottom: 20px;
+  width: 80%; /* 부모 요소의 너비를 100% 차지 */
 `;
 
 const Header = ({ title }) => {
   return (
-    <StyleHeader>
+    <StyledHeader>
       {title}
-    </StyleHeader>
+    </StyledHeader>
   );
 };
 

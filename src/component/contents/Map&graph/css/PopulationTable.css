@@ -2,6 +2,7 @@
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd;
+  height: 100px;
 }
 
 .population-table th,
@@ -17,28 +18,4 @@
 
 .population-table tr:nth-child(even) {
   background-color: #f9f9f9;
-}
-
-.container {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 600px;
-  padding-bottom: 20px;
-}
-
-.content {
-  width: 48%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 10px;
 }

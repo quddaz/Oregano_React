@@ -26,18 +26,25 @@ function MainPage() {
 
     return (
         <div className="wrapper">
+
+            {/* 첫 번째 섹션 */}
             <Header title='장애인 인구 현황'/>
             <div className="container">
                 <div className="content">
-                    <KorMap data={data} />
+                        <KorMap data={data} />
                 </div>
                 <div className="content"> 
-                    <PopulationTable data={data} />
+                    <div className="sub-content"> 
+                        <p>전국 인구 테이블</p>
+                        <PopulationTable data={data} />
+                    </div>
                 </div>
             </div>
-            <Header title='그래프'/>
+
+            {/* 두 번째 섹션 */}
+            <Header title='인구수 그래프'/>
             <div className='Big-content'>
-            <FluctuationChart data={data} />
+                <FluctuationChart data={data} />
             </div>
         </div>
     );
