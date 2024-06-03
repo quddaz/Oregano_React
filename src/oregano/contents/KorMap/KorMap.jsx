@@ -58,15 +58,15 @@ function KorMap({ data }) {
   const chartData = processData(data);
 
   const setColorByCount = (count) => {
-    if (count === 0) return "#F1F1F1"; // 흰색
-    if (count > 500000) return "#FF5733"; // 진한 빨간색
-    if (count > 300000) return "#FF875E"; // 연한 빨간색
-    if (count > 100000) return "#FFAB99"; // 연한 주황색
-    if (count > 50000) return "#FFCECC"; // 연한 분홍색
-    if (count > 25000) return "#FFE7E5"; // 연한 핑크색
-    if (count > 10000) return "#FFFAFA"; // 아이보리색
-    if (count > 5) return "#FAEBE0"; // 연한 베이지색
-    else return "#ebfffd"; // 연한 청록색
+    if (count === 0) return "#F1F1F1"; 
+    if (count > 500000) return "#FF5733"; 
+    if (count > 300000) return "#FF875E"; 
+    if (count > 100000) return "#FFAB99"; 
+    if (count > 50000) return "#FFCECC"; 
+    if (count > 25000) return "#FFE7E5"; 
+    if (count > 10000) return "#FFFAFA";
+    if (count > 5) return "#FAEBE0"; 
+    else return "#ebfffd"; 
   };
 
   return (

@@ -64,8 +64,8 @@ function Stats({ onDataReceived }) {
         </div>
       </div>
       <div className="stats-content">
-        <StatsSection title="장애인 근로자(추정 수)" data={filteredEstimatedCounts} unit="명" formatter={formatNumber} />
-        <StatsSection title="3개월 평균 임금" data={filteredAverageSalaries} unit="만원" formatter={formatSalary} />
+        <StatsSection title="장애인 근로자(추정 수) & 3개월 평균 임금" data={filteredEstimatedCounts} unit="명" formatter={formatNumber} />
+        <StatsSection data={filteredAverageSalaries} unit="만원" formatter={formatSalary} />
       </div>
     </div>
   );

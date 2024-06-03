@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Main 페이지 상단 스테이터스 데이터 요청
 export const getStats = async () => {
   try {
     const res = await axios.get('/EstimatedSixMonthsIncome');
@@ -14,6 +15,7 @@ export const getStats = async () => {
   }
 };
 
+// 장애인 전체 인구수 데이터 요청
 export const getFilteredDisabledPeople = async () => {
   try {
     const res = await axios.get('/filtered-disabled-people');
@@ -24,6 +26,8 @@ export const getFilteredDisabledPeople = async () => {
   }
 };
 
+
+// 한국장애인고용공단 실시간 구인구직 API 데이터 요청
 export const getFetchJobListings = async (region, empType) => {
   try {
       const res = await axios.get(`/fetchJobListings?region=${region}&empType=${empType}`);

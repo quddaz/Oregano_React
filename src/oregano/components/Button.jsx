@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border: 1px solid black;
   border-radius: 4px;
   background-color: white;
-  color: black; /* 수정: 텍스트 색을 검정색으로 변경 */
+  color: black; 
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {

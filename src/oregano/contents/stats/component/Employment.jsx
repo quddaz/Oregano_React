@@ -45,7 +45,7 @@ const Value = styled.span`
 `;
 
 function Employment({ onDataReceived, data }) {
-  const totalPopulation = onDataReceived ? onDataReceived() : 0; // 전체 인구수를 받아옴
+  const totalPopulation = onDataReceived ? onDataReceived() : 3000000; // 전체 인구수를 받아옴
 
   return (
     <StatsAllContainer>

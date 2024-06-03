@@ -5,11 +5,12 @@ const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* 세로 중앙 정렬 추가 */
+  align-items: center;
 `;
 const SectionTitle = styled.h3`
   margin-bottom: 5px;
   width: 100%;
+  margin-left: -10px;
 `;
 
 const StatsContainer = styled.div`
@@ -17,7 +18,7 @@ const StatsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; /* 세로 중앙 정렬 추가 */
+  align-items: center; 
 `;
 
 const StatItem = styled.div`
@@ -37,7 +38,7 @@ const Name = styled.p`
 const Value = styled.a`
   font-size: 2.5em; 
   border-bottom: 2px solid #333;
-  font-weight: bold; /* 중간 굵기 */
+  font-weight: bold;
 `;
 
 const Unit = styled.a`

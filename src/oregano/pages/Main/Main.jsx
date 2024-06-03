@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FluctuationChart from '../../contents/chart/FluctuationChart';
-import KorMap from '../../contents/KorMap/KorMap';
+import KorMap from '../../contents/korMap/KorMap';
 import PopulationTable from '../../contents/Table/PopulationTable';
 import Header from '../../components/Header';
 import './Main.css'; // CSS 파일 import

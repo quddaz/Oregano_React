@@ -41,8 +41,8 @@ const tickFormatY = (tickItem) => {
   return tickItem >= 1000 ? tickItem.toLocaleString() : tickItem;
 };
 
-const tooltipFormat = (value) => {
-  return value >= 1000 ? value.toLocaleString() : value;
+const tooltipFormat= (value) => {
+  return value >= 1000 ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : value;
 };
 
 const FluctuationChart = ({ data }) => {
@@ -80,7 +80,7 @@ const FluctuationChart = ({ data }) => {
           />
           <Tooltip
             labelFormatter={(value) => abbreviateRegion(value)} // Use abbreviations for tooltip labels
-            formatter={(value) => tooltipFormat(value)}
+            formatter={tooltipFormat}
           />
           <Legend />
           <Bar yAxisId="left" dataKey="DT" name="장애인 인구 수" barSize={20} fill="#8884d8" />

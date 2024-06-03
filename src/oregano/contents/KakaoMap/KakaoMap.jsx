@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import branches from '../../data/branches';
 import './KakaoMap.css';
 
-const { kakao } = window;
 
 function KakaoMap() {
   const [selectedBranch, setSelectedBranch] = useState('서울지역본부');
