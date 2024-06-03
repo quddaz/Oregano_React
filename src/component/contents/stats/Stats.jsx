@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './Stats.css';
 import QuarterSelector from './Stats_Component/QuarterSelector';
@@ -34,7 +34,7 @@ function Stats({ onDataReceived }) {
     getStats();
   }, []);
 
-  const filterData = (data, quarter, includeAll) => {
+  const filterData = useCallback((data, quarter, includeAll) => {
     return data.filter(item => {
       if (includeAll) {
         return item.PRD_DE === quarter && item.C1_NM === '전체';
@@ -42,7 +42,7 @@ function Stats({ onDataReceived }) {
         return item.PRD_DE === quarter && item.C1_NM !== '전체';
       }
     });
-  };
+  }, []);
 
   const formatNumber = (number) => {
     return Number(number).toLocaleString(); // 1,000,000 형태로 포맷팅
@@ -56,6 +56,8 @@ function Stats({ onDataReceived }) {
   const filteredAverageSalaries = filterData(averageSalaries, selectedQuarter, false);
   const allEstimatedCounts = filterData(estimatedCounts, selectedQuarter, true);
 
+  const handleDataReceived = useCallback(onDataReceived, [onDataReceived]);
+
   return (
     <div className="stats-container">
       <QuarterSelector quarters={quarters} setSelectedQuarter={setSelectedQuarter} />
@@ -63,7 +65,7 @@ function Stats({ onDataReceived }) {
         <UserAuthChart data={filteredEstimatedCounts} />
         <div className='stats-Alldata'>
           <StatsAll title="장애인 근로자(추정 수)" data={allEstimatedCounts} unit="명" formatter={formatNumber} />
-          <Employment onDataReceived={onDataReceived} data={allEstimatedCounts} />
+          <Employment onDataReceived={handleDataReceived} data={allEstimatedCounts} />
         </div>
       </div>
       <div className="stats">
@@ -74,4 +76,4 @@ function Stats({ onDataReceived }) {
   );
 }
 
-export default Stats;
+export default React.memo(Stats);

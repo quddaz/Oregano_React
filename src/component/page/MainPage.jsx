@@ -34,6 +34,7 @@ function MainPage() {
             <Header title='한눈에 보는 장애인 고용 통계'/>
             {/* 전체 인구수를 Stats 컴포넌트에 전달 */}
             <Stats onDataReceived={() => totalPopulation} />
+            
             {/* 첫 번째 섹션 */}
             <Header title='전국 장애인 인구 현황'/>
             <div className="container">

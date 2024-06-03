@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Job.css";
 import JobInfoItem from './JobInfoItem';
 
-const regions = ['서울특별시', '경기도', '강원도', '전라남도', '전라북도', '충청남도', '충청북도', '경상남도', '경상북도', '인천광역시', '광주광역시', '부산광역시', '대전광역시'];
+const regions = ['서울특별시', '경기도', '강원', '전라남도', '전라북도', '충청남도', '충청북도', '경상남도', '경상북도', '인천광역시', '광주광역시', '부산광역시', '대전광역시'];
 const empTypes = ['상용직', '계약직'];
 
 function Job() {
