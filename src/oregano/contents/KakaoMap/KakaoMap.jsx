@@ -5,7 +5,7 @@ import './KakaoMap.css';
 
 function KakaoMap() {
   const [selectedBranch, setSelectedBranch] = useState('서울지역본부');
-
+  //키에 대한 취급 필요 
   useEffect(() => {
     const mapScript = document.createElement('script');
     mapScript.async = true;
