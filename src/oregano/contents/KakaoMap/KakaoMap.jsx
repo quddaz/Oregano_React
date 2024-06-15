@@ -10,9 +10,8 @@ function KakaoMap() {
     
     const mapScript = document.createElement('script');
     mapScript.async = true;
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAO_MAP}&libraries=services&autoload=false`;
+    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAO_MAP_KEY}&libraries=services&autoload=false`;
     document.head.appendChild(mapScript);
-
     mapScript.onload = () => {
       if (window.kakao && window.kakao.maps) {
         console.log("Kakao map script loaded successfully");
