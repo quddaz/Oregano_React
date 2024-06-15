@@ -12,7 +12,6 @@ function KakaoMap() {
     mapScript.async = true;
     mapScript.src = process.env.REACT_APP_KAKAO_MAP_KEY;
     document.head.appendChild(mapScript);
-    console.log(mapScript.src);
     mapScript.onload = () => {
       if (window.kakao && window.kakao.maps) {
         console.log("Kakao map script loaded successfully");
