@@ -38,6 +38,11 @@ function Stats({ onDataReceived }) {
   }, []);
 
   const filterData = useCallback((data, quarter, includeAll) => {
+    // data가 배열이 아닌 경우 빈 배열을 반환하도록 보호 코드 추가
+    if (!Array.isArray(data)) {
+      return [];
+    }
+
     return data.filter(item => {
       if (includeAll) {
         return item.PRD_DE === quarter && item.C1_NM === '전체';
